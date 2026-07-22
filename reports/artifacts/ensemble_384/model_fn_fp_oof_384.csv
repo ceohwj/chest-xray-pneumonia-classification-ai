@@ -1,0 +1,4 @@
+model,protocol,threshold,fn,fp
+ConvNeXt-Tiny 384 OOF,384px 5-fold OOF,0.5,35,4
+EfficientNet-B3 384 OOF,384px 5-fold OOF,0.5,44,5
+Final 384 ensemble OOF,384px 5-fold OOF,0.4,25,17

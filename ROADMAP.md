@@ -23,6 +23,7 @@ and reproducibility work. The project remains research/education-only.
 - [x] Exclude local images, checkpoints, generated outputs, and credentials.
 - [x] Add dependency, script, and report indexes.
 - [x] Group runnable code by responsibility and apply action-first file names.
+- [x] Promote small reproducibility artifacts from ignored experiment outputs.
 - [ ] Add exact dataset URL, citation, version, and redistribution terms.
 - [ ] Choose and add a repository license.
 - [ ] Confirm that every committed figure is permitted for redistribution.

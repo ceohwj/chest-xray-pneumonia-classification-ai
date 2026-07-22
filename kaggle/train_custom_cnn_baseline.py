@@ -8,8 +8,8 @@ Project framing:
 
 How to use on Kaggle:
 1. Upload or attach a Kaggle dataset containing:
-   - outputs/train_split.csv
-   - outputs/val_split.csv
+   - data/splits/train_duplicate_aware.csv
+   - data/splits/val_duplicate_aware.csv
    - data/images/
 2. Edit DATA_ROOT below so it matches your Kaggle dataset mount.
 3. Run this script/notebook cell on a Kaggle GPU.
@@ -53,8 +53,8 @@ from torch.utils.data import DataLoader, Dataset
 DATA_ROOT = "/kaggle/input/<DATASET_NAME>"
 WORK_DIR = "/kaggle/working"
 
-TRAIN_SPLIT_CSV = f"{DATA_ROOT}/outputs/train_split.csv"
-VAL_SPLIT_CSV = f"{DATA_ROOT}/outputs/val_split.csv"
+TRAIN_SPLIT_CSV = f"{DATA_ROOT}/data/splits/train_duplicate_aware.csv"
+VAL_SPLIT_CSV = f"{DATA_ROOT}/data/splits/val_duplicate_aware.csv"
 IMAGE_DIR = f"{DATA_ROOT}/data/images"
 
 OUTPUT_DIR = f"{WORK_DIR}/custom_cnn_baseline"

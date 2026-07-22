@@ -1,0 +1,9 @@
+model,protocol,threshold,fn,fp
+DenseNet121 fine-tune,224px single validation,0.5,15,10
+EfficientNet-B0 fine-tune,224px single validation,0.5,24,7
+ConvNeXt-Tiny fine-tune,224px single validation,0.5,30,3
+ResNet50 fine-tune,224px single validation,0.5,21,19
+EfficientNet-B3 fine-tune,224px single validation,0.5,44,5
+ConvNeXt-Tiny 384 OOF,384px 5-fold OOF,0.5,35,4
+EfficientNet-B3 384 OOF,384px 5-fold OOF,0.5,44,5
+Final 384 ensemble OOF,384px 5-fold OOF,0.4,25,17

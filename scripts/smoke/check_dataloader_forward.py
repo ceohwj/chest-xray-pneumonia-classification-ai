@@ -32,8 +32,8 @@ LABEL_NAMES = {0: "NORMAL", 1: "PNEUMONIA"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run pre-training DataLoader and forward-pass smoke tests.")
-    parser.add_argument("--train_csv", default="outputs/train_split.csv")
-    parser.add_argument("--val_csv", default="outputs/val_split.csv")
+    parser.add_argument("--train_csv", default="data/splits/train_duplicate_aware.csv")
+    parser.add_argument("--val_csv", default="data/splits/val_duplicate_aware.csv")
     parser.add_argument("--image_dir", default="data/images")
     parser.add_argument("--report_path", default="reports/dataloader_forward_smoke_test.md")
     parser.add_argument("--batch_size", type=int, default=16)

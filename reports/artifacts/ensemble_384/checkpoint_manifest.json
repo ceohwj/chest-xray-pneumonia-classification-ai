@@ -1,0 +1,49 @@
+{
+  "package_name": "best_pb_ensemble_384",
+  "artifact_type": "pytorch_multi_model_ensemble",
+  "purpose": "research_and_education_only",
+  "clinical_use": false,
+  "image_size": 384,
+  "folds": 5,
+  "threshold": 0.36,
+  "label_mapping": {
+    "0": "NORMAL",
+    "1": "PNEUMONIA"
+  },
+  "ensemble_weights": {
+    "densenet121": 0.75,
+    "convnext_tiny": 0.15,
+    "efficientnet_b3": 0.1
+  },
+  "checkpoint_format": "raw_state_dict",
+  "checkpoints": {
+    "densenet121": [
+      "checkpoints/best_densenet121_384_fold0.pt",
+      "checkpoints/best_densenet121_384_fold1.pt",
+      "checkpoints/best_densenet121_384_fold2.pt",
+      "checkpoints/best_densenet121_384_fold3.pt",
+      "checkpoints/best_densenet121_384_fold4.pt"
+    ],
+    "convnext_tiny": [
+      "checkpoints/best_convnext_tiny_384_fold0.pt",
+      "checkpoints/best_convnext_tiny_384_fold1.pt",
+      "checkpoints/best_convnext_tiny_384_fold2.pt",
+      "checkpoints/best_convnext_tiny_384_fold3.pt",
+      "checkpoints/best_convnext_tiny_384_fold4.pt"
+    ],
+    "efficientnet_b3": [
+      "checkpoints/best_efficientnet_b3_384_fold0.pt",
+      "checkpoints/best_efficientnet_b3_384_fold1.pt",
+      "checkpoints/best_efficientnet_b3_384_fold2.pt",
+      "checkpoints/best_efficientnet_b3_384_fold3.pt",
+      "checkpoints/best_efficientnet_b3_384_fold4.pt"
+    ]
+  },
+  "submission": "submission.csv",
+  "ensemble_config": "best_oof_ensemble_config.json",
+  "inference_source": "inference_source.py",
+  "verification_result": "verification_result.json",
+  "verified_checkpoint_count": 15,
+  "strict_load_verified": true,
+  "one_image_inference_verified": true
+}

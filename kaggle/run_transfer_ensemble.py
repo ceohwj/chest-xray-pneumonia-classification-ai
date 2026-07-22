@@ -9,8 +9,8 @@ Attach a Kaggle dataset containing:
 - data/images/
 - data/test.csv
 - data/sample_submission.csv
-- outputs/train_split.csv
-- outputs/val_split.csv
+- data/splits/train_strict_duplicate_aware.csv
+- data/splits/val_strict_duplicate_aware.csv
 
 Also attach or upload this repository/code so that scripts/training/train_transfer_ensemble.py
 is available.
@@ -26,8 +26,8 @@ from pathlib import Path
 
 
 REQUIRED_DATA_FILES = (
-    "outputs/train_split.csv",
-    "outputs/val_split.csv",
+    "data/splits/train_strict_duplicate_aware.csv",
+    "data/splits/val_strict_duplicate_aware.csv",
     "data/test.csv",
     "data/sample_submission.csv",
     "data/images",
@@ -130,9 +130,9 @@ def main() -> None:
         sys.executable,
         str(train_script),
         "--train-csv",
-        str(data_root / "outputs" / "train_split.csv"),
+        str(data_root / "data" / "splits" / "train_strict_duplicate_aware.csv"),
         "--val-csv",
-        str(data_root / "outputs" / "val_split.csv"),
+        str(data_root / "data" / "splits" / "val_strict_duplicate_aware.csv"),
         "--test-csv",
         str(data_root / "data" / "test.csv"),
         "--sample-submission",

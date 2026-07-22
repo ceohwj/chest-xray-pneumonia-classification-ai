@@ -89,8 +89,8 @@ if IS_KAGGLE:
 else:
     DATA_ROOT = str(PROJECT_ROOT)
     WORK_DIR = str(PROJECT_ROOT / "outputs")
-    DEFAULT_TRAIN_SPLIT_CSV = str(PROJECT_ROOT / "outputs" / "train_split.csv")
-    DEFAULT_VAL_SPLIT_CSV = str(PROJECT_ROOT / "outputs" / "val_split.csv")
+    DEFAULT_TRAIN_SPLIT_CSV = str(PROJECT_ROOT / "data" / "splits" / "train_duplicate_aware.csv")
+    DEFAULT_VAL_SPLIT_CSV = str(PROJECT_ROOT / "data" / "splits" / "val_duplicate_aware.csv")
     DEFAULT_TEST_CSV = str(PROJECT_ROOT / "data" / "test.csv")
     DEFAULT_SAMPLE_SUBMISSION_CSV = str(PROJECT_ROOT / "data" / "sample_submission.csv")
     DEFAULT_IMAGE_DIR = str(PROJECT_ROOT / "data" / "images")

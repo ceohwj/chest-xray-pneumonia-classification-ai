@@ -6,15 +6,15 @@
 
 실제 확인 파일:
 
-* `outputs/train_split_strict.csv`
-* `outputs/val_split_strict.csv`
-* `outputs/kaggle_custom_cnn_baseline/config.json`
-* `outputs/kaggle_custom_cnn_baseline/best_metrics.json`
-* `outputs/kaggle_custom_cnn_baseline/final_metrics.json`
-* `outputs/kaggle_custom_cnn_baseline/confusion_matrix.csv`
-* `outputs/kaggle_custom_cnn_baseline/false_negatives.csv`
-* `outputs/kaggle_custom_cnn_baseline/false_positives.csv`
-* `outputs/kaggle_custom_cnn_baseline/custom_cnn_baseline_report.md`
+* `data/splits/train_strict_duplicate_aware.csv`
+* `data/splits/val_strict_duplicate_aware.csv`
+* `reports/artifacts/baseline/config.json`
+* `reports/artifacts/baseline/best_metrics.json`
+* `reports/artifacts/baseline/final_metrics.json`
+* `reports/artifacts/baseline/confusion_matrix.csv`
+* `reports/artifacts/baseline/false_negatives.csv`
+* `reports/artifacts/baseline/false_positives.csv`
+* `reports/artifacts/baseline/run_report.md`
 
 데이터 구조 확인 결과:
 
@@ -26,7 +26,7 @@
 * label mapping:
   * NORMAL = 0
   * PNEUMONIA = 1
-* `outputs/train_split_strict.csv`와 `outputs/val_split_strict.csv`에는 `duplicate_group_id`, `strict_duplicate_group_id` 컬럼이 있다.
+* `data/splits/train_strict_duplicate_aware.csv`와 `data/splits/val_strict_duplicate_aware.csv`에는 `duplicate_group_id`, `strict_duplicate_group_id` 컬럼이 있다.
 * 원본 `duplicate_group_id` 기준으로는 train/validation 사이에 겹치는 그룹이 2개 확인되었다.
 * strict split에서 사용하는 `strict_duplicate_group_id` 기준으로는 train/validation 사이에 겹치는 그룹이 0개 확인되었다.
 * train/validation 사이의 파일명 overlap은 0개로 확인되었다.
@@ -35,7 +35,7 @@
 
 ### 1.2 클래스 분포
 
-`outputs/train_split_strict.csv`와 `outputs/val_split_strict.csv` 기준 클래스 분포는 다음과 같다.
+`data/splits/train_strict_duplicate_aware.csv`와 `data/splits/val_strict_duplicate_aware.csv` 기준 클래스 분포는 다음과 같다.
 
 | Split      | NORMAL 수 | PNEUMONIA 수 | 전체 수 | NORMAL 비율 | PNEUMONIA 비율 |
 | ---------- | -------: | ----------: | ---: | --------: | -----------: |
@@ -79,7 +79,7 @@ NORMAL 샘플 이미지는 전반적으로 grayscale 흉부 X-ray 형태이며, 
 
 ### 3.1 Baseline 모델 구조
 
-현재 Baseline 모델은 Custom CNN이다. 실제 실행 스크립트 `kaggle/train_custom_cnn_baseline.py`와 리포트 `outputs/kaggle_custom_cnn_baseline/custom_cnn_baseline_report.md` 기준 구조는 다음과 같다.
+현재 Baseline 모델은 Custom CNN이다. 실제 실행 스크립트 `kaggle/train_custom_cnn_baseline.py`와 리포트 `reports/artifacts/baseline/run_report.md` 기준 구조는 다음과 같다.
 
 * 모델명: Custom CNN
 * 입력 shape: `[batch_size, 3, 224, 224]`
@@ -106,7 +106,7 @@ NORMAL 샘플 이미지는 전반적으로 grayscale 흉부 X-ray 형태이며, 
 
 ### 3.2 이미지 처리 방식
 
-`outputs/kaggle_custom_cnn_baseline/config.json` 및 `kaggle/train_custom_cnn_baseline.py` 기준 이미지 처리 방식은 다음과 같다.
+`reports/artifacts/baseline/config.json` 및 `kaggle/train_custom_cnn_baseline.py` 기준 이미지 처리 방식은 다음과 같다.
 
 * image resize 크기: 224x224
 * normalization 방식: pixel 값을 `[0, 1]` 범위로 스케일링한다. ImageNet mean/std normalization은 Baseline Custom CNN 실행 코드에서 확인되지 않았다.
@@ -188,7 +188,7 @@ NORMAL 샘플 이미지는 전반적으로 grayscale 흉부 X-ray 형태이며, 
 
 ## 5. Baseline 모델 성능 기록
 
-`outputs/kaggle_custom_cnn_baseline/best_metrics.json`, `final_metrics.json`, `confusion_matrix.csv`, `train_log.csv` 기준 성능을 정리했다. 아래 주요 표는 best checkpoint, 즉 validation F1-score가 가장 높았던 epoch 18 기준이다.
+`reports/artifacts/baseline/best_metrics.json`, `final_metrics.json`, `confusion_matrix.csv`, `training_history.csv` 기준 성능을 정리했다. 아래 주요 표는 best checkpoint, 즉 validation F1-score가 가장 높았던 epoch 18 기준이다.
 
 ### 5.1 주요 성능 지표
 
@@ -212,7 +212,7 @@ NORMAL 샘플 이미지는 전반적으로 grayscale 흉부 X-ray 형태이며, 
 
 ### 5.2 Confusion Matrix
 
-`outputs/kaggle_custom_cnn_baseline/confusion_matrix.csv` 기준 best checkpoint confusion matrix는 다음과 같다.
+`reports/artifacts/baseline/confusion_matrix.csv` 기준 best checkpoint confusion matrix는 다음과 같다.
 
 |                  | Predicted NORMAL | Predicted PNEUMONIA |
 | ---------------- | ---------------: | ------------------: |
@@ -221,7 +221,7 @@ NORMAL 샘플 이미지는 전반적으로 grayscale 흉부 X-ray 형태이며, 
 
 ### 5.3 FN/FP 오류 분석
 
-`outputs/kaggle_custom_cnn_baseline/false_negatives.csv`와 `outputs/kaggle_custom_cnn_baseline/false_positives.csv` 기준 오류 개수는 다음과 같다.
+`reports/artifacts/baseline/false_negatives.csv`와 `reports/artifacts/baseline/false_positives.csv` 기준 오류 개수는 다음과 같다.
 
 * False Negative 개수: 9
 * False Positive 개수: 15
@@ -343,7 +343,7 @@ Accuracy는 특정 threshold에서의 성능이다. threshold가 바뀌면 accur
 
 ## Q5. 현재 데이터는 불균형 상태인가요? 그렇다면 어떻게 확인했나요?
 
-현재 데이터는 불균형 상태이다. `outputs/train_split_strict.csv` 기준 train 데이터는 NORMAL 1,073장(25.71%), PNEUMONIA 3,100장(74.29%)이다. `outputs/val_split_strict.csv` 기준 validation 데이터는 NORMAL 268장(25.70%), PNEUMONIA 775장(74.30%)이다. 전체로는 NORMAL 1,341장(25.71%), PNEUMONIA 3,875장(74.29%)이므로 PNEUMONIA가 NORMAL보다 약 2.89배 많다.
+현재 데이터는 불균형 상태이다. `data/splits/train_strict_duplicate_aware.csv` 기준 train 데이터는 NORMAL 1,073장(25.71%), PNEUMONIA 3,100장(74.29%)이다. `data/splits/val_strict_duplicate_aware.csv` 기준 validation 데이터는 NORMAL 268장(25.70%), PNEUMONIA 775장(74.30%)이다. 전체로는 NORMAL 1,341장(25.71%), PNEUMONIA 3,875장(74.29%)이므로 PNEUMONIA가 NORMAL보다 약 2.89배 많다.
 
 ## Q6. Baseline 모델의 가장 큰 한계는 무엇인가요?
 

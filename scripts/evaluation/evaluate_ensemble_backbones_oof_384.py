@@ -52,8 +52,8 @@ IMAGENET_STD = [0.229, 0.224, 0.225]
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate existing 384px fold checkpoints as single models.")
-    parser.add_argument("--train-csv", default="outputs/train_split.csv")
-    parser.add_argument("--val-csv", default="outputs/val_split.csv")
+    parser.add_argument("--train-csv", default="data/splits/train_strict_duplicate_aware.csv")
+    parser.add_argument("--val-csv", default="data/splits/val_strict_duplicate_aware.csv")
     parser.add_argument("--image-dir", default="data/images")
     parser.add_argument("--checkpoint-dir", default="outputs/Densenet+efficientnet_B3+convnext_384")
     parser.add_argument("--output-dir", default="outputs/single_model_384_eval")

@@ -172,7 +172,7 @@ Final 384 ensemble OOF, threshold 0.40 기준:
 | 0.40 | 0.9919 | 0.9956 | 0.9935 | 0.9873 | 0.9946 | 25 | 17 |
 | 0.50 | 0.9902 | 0.9971 | 0.9897 | 0.9918 | 0.9934 | 40 | 11 |
 
-의료영상 프로젝트 관점에서는 FN을 줄이는 것이 중요하므로, 단순 Accuracy가 가장 높은 threshold만 선택하기보다는 threshold 0.30처럼 recall을 더 높이는 설정도 함께 검토해야 한다. 다만 threshold 0.30은 FP가 증가하므로, 실제 운영 목적에 따라 민감도와 특이도의 균형을 정해야 한다. Threshold별 FN/FP 파일은 `outputs/gradcam/ensemble_384/false_negatives_threshold_*.csv`, `outputs/gradcam/ensemble_384/false_positives_threshold_*.csv`에 저장했다.
+의료영상 프로젝트 관점에서는 FN을 줄이는 것이 중요하므로, 단순 Accuracy가 가장 높은 threshold만 선택하기보다는 threshold 0.30처럼 recall을 더 높이는 설정도 함께 검토해야 한다. 다만 threshold 0.30은 FP가 증가하므로, 실제 운영 목적에 따라 민감도와 특이도의 균형을 정해야 한다. Threshold별 FN/FP 파일은 `reports/artifacts/ensemble_384/false_negatives_threshold_*.csv`, `reports/artifacts/ensemble_384/false_positives_threshold_*.csv`에 저장했다.
 
 선 그래프는 label이 존재하는 OOF prediction 기준으로 계산한 Accuracy, Sensitivity, Specificity만 포함한다. Threshold가 낮아질수록 Sensitivity는 상승하지만 Specificity는 하락한다. 반대로 threshold가 높아질수록 FP는 줄어드나 FN이 증가한다. 따라서 OOF 기준 0.40은 sensitivity와 specificity의 균형점으로 볼 수 있다. 시각적 구분을 위해 y축 범위는 0.975~1.000으로 확대했다. Leaderboard threshold 후보는 test label이 없기 때문에 sensitivity/specificity를 계산할 수 없어 이 그래프에 포함하지 않았다.
 
@@ -192,7 +192,7 @@ Final 384 ensemble OOF, threshold 0.40 기준:
 
 모델 확률 상관계수는 OOF probability 기준으로 0.988~0.991로 높게 나타났다. 따라서 세 모델이 완전히 독립적인 예측을 한다고 해석하면 안 된다. 다만 threshold 0.40 기준 오진 샘플의 Jaccard overlap은 약 0.305~0.338로, 실제 오류 집합은 완전히 같지 않았다. 즉 앙상블의 장점은 낮은 확률 상관관계라기보다, 서로 완전히 동일하지 않은 오류 패턴을 평균화해 FN/FP 균형을 안정화한 데 있다고 해석하는 것이 더 적절하다.
 
-모델 비교용 원본 CSV는 `outputs/gradcam/ensemble_384/model_fn_fp_single_validation_for_report.csv`, `outputs/gradcam/ensemble_384/model_fn_fp_384_oof_for_report.csv`에 저장했다.
+모델 비교용 원본 CSV는 `reports/artifacts/ensemble_384/model_fn_fp_single_validation.csv`, `reports/artifacts/ensemble_384/model_fn_fp_oof_384.csv`에 저장했다.
 
 ### Pseudo-labeling 결과
 
@@ -325,7 +325,7 @@ Grad-CAM 분석에서는 단순히 "잘 봤다"라고 표현하면 안 된다. �
 
 다만 실무 적용 가능성은 제한적으로 해석해야 한다. 내부 OOF 성능은 높지만, patient-level identifier가 없어 환자 단위 leakage를 완전히 배제할 수 없고, 테스트 라벨이 없어 pseudo-labeling 이후의 실제 성능 향상을 직접 검증할 수 없다. 또한 Grad-CAM에서 일부 샘플의 activation이 폐 하부, crop border, marker 주변에 강하게 나타났으므로, 모델이 항상 의학적으로 타당한 폐 영역만 보고 판단한다고 단정할 수 없다.
 
-현재 `outputs/train_split_strict.csv`, `outputs/val_split_strict.csv`, `outputs/results(마지막)/oof_ensemble.csv`에서 확인되는 컬럼은 파일명, label, fold/prob, duplicate group 관련 컬럼뿐이다. 별도의 patient ID 컬럼은 확인되지 않았다. 따라서 현재 단계에서는 patient-level split 재평가를 수행할 수 없고, strict duplicate-aware split 결과로만 해석해야 한다.
+현재 `data/splits/train_strict_duplicate_aware.csv`, `data/splits/val_strict_duplicate_aware.csv`, `reports/artifacts/ensemble_384/oof_predictions.csv`에서 확인되는 컬럼은 파일명, label, fold/prob, duplicate group 관련 컬럼뿐이다. 별도의 patient ID 컬럼은 확인되지 않았다. 따라서 현재 단계에서는 patient-level split 재평가를 수행할 수 없고, strict duplicate-aware split 결과로만 해석해야 한다.
 
 따라서 이 모델은 임상 진단 도구가 아니라, 흉부 X-ray 이진 분류 모델을 재현 가능하게 학습하고 다양한 지표로 평가하며 오류와 해석 가능성을 분석한 포트폴리오 프로젝트로 제시하는 것이 적절하다.
 

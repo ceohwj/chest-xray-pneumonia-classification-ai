@@ -1,0 +1,37 @@
+{
+  "best_score": 0.9930981595092024,
+  "best_threshold": 0.36,
+  "best_weights": {
+    "densenet121": 0.75,
+    "convnext_tiny": 0.15,
+    "efficientnet_b3": 0.1
+  },
+  "optimization_metric": "accuracy",
+  "ensemble_opt_metric": "accuracy",
+  "experiment": "strict_focal_clahe_letterbox_384_5fold",
+  "mode": "5fold",
+  "use_letterbox": true,
+  "use_clahe": true,
+  "use_focal_loss": true,
+  "use_mixup": true,
+  "add_cbam_to_all": true,
+  "best_accuracy": 0.9930981595092024,
+  "best_f1": 0.9953560371517027,
+  "best_balanced_accuracy": 0.990722186139376,
+  "oof_f1": 0.9953560371517027,
+  "oof_auroc": 0.9994678982944841,
+  "confusion_matrix": [
+    [
+      1322,
+      19
+    ],
+    [
+      17,
+      3858
+    ]
+  ],
+  "pneumonia_recall": 0.9956129032258064,
+  "normal_recall": 0.9858314690529456,
+  "predicted_positive_ratio": 0.7432898773006135,
+  "true_positive_ratio": 0.7429064417177914
+}

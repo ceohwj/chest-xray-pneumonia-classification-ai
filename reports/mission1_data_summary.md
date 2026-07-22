@@ -4,15 +4,15 @@
 
 ## 확인한 입력 파일
 
-* `outputs/train_split_strict.csv`
-* `outputs/val_split_strict.csv`
-* `outputs/kaggle_custom_cnn_baseline/config.json`
-* `outputs/kaggle_custom_cnn_baseline/best_metrics.json`
-* `outputs/kaggle_custom_cnn_baseline/final_metrics.json`
-* `outputs/kaggle_custom_cnn_baseline/confusion_matrix.csv`
-* `outputs/kaggle_custom_cnn_baseline/false_negatives.csv`
-* `outputs/kaggle_custom_cnn_baseline/false_positives.csv`
-* `outputs/kaggle_custom_cnn_baseline/custom_cnn_baseline_report.md`
+* `data/splits/train_strict_duplicate_aware.csv`
+* `data/splits/val_strict_duplicate_aware.csv`
+* `reports/artifacts/baseline/config.json`
+* `reports/artifacts/baseline/best_metrics.json`
+* `reports/artifacts/baseline/final_metrics.json`
+* `reports/artifacts/baseline/confusion_matrix.csv`
+* `reports/artifacts/baseline/false_negatives.csv`
+* `reports/artifacts/baseline/false_positives.csv`
+* `reports/artifacts/baseline/run_report.md`
 * `kaggle/train_custom_cnn_baseline.py`
 * `src/models/baseline_cnn.py`
 * `src/data/transforms.py`

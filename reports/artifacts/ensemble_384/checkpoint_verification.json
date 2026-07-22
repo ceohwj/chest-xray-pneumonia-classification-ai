@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "torch_version": "2.13.0",
+  "torchvision_version": "0.28.0",
+  "device": "cpu",
+  "image": "data/images/test/test_0001.png",
+  "image_tensor_shape": [
+    1,
+    3,
+    384,
+    384
+  ],
+  "loaded_checkpoint_count": 15,
+  "strict_load_all_passed": true,
+  "model_probabilities": {
+    "densenet121": 0.5814713120460511,
+    "convnext_tiny": 0.5752677321434021,
+    "efficientnet_b3": 0.2565076619386673
+  },
+  "ensemble_probability_pneumonia": 0.5480444100499153,
+  "threshold": 0.36,
+  "predicted_label": 1,
+  "submission_label": 1,
+  "prediction_matches_submission": true,
+  "checkpoint_results": [
+    {
+      "model": "densenet121",
+      "fold": 0,
+      "checkpoint": "checkpoints/best_densenet121_384_fold0.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.7559224367141724
+    },
+    {
+      "model": "densenet121",
+      "fold": 1,
+      "checkpoint": "checkpoints/best_densenet121_384_fold1.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.4068775177001953
+    },
+    {
+      "model": "densenet121",
+      "fold": 2,
+      "checkpoint": "checkpoints/best_densenet121_384_fold2.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.6824155449867249
+    },
+    {
+      "model": "densenet121",
+      "fold": 3,
+      "checkpoint": "checkpoints/best_densenet121_384_fold3.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.46137571334838867
+    },
+    {
+      "model": "densenet121",
+      "fold": 4,
+      "checkpoint": "checkpoints/best_densenet121_384_fold4.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.6007653474807739
+    },
+    {
+      "model": "convnext_tiny",
+      "fold": 0,
+      "checkpoint": "checkpoints/best_convnext_tiny_384_fold0.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.39815855026245117
+    },
+    {
+      "model": "convnext_tiny",
+      "fold": 1,
+      "checkpoint": "checkpoints/best_convnext_tiny_384_fold1.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.5900388956069946
+    },
+    {
+      "model": "convnext_tiny",
+      "fold": 2,
+      "checkpoint": "checkpoints/best_convnext_tiny_384_fold2.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.5563257932662964
+    },
+    {
+      "model": "convnext_tiny",
+      "fold": 3,
+      "checkpoint": "checkpoints/best_convnext_tiny_384_fold3.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.6374969482421875
+    },
+    {
+      "model": "convnext_tiny",
+      "fold": 4,
+      "checkpoint": "checkpoints/best_convnext_tiny_384_fold4.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.6943184733390808
+    },
+    {
+      "model": "efficientnet_b3",
+      "fold": 0,
+      "checkpoint": "checkpoints/best_efficientnet_b3_384_fold0.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.14171501994132996
+    },
+    {
+      "model": "efficientnet_b3",
+      "fold": 1,
+      "checkpoint": "checkpoints/best_efficientnet_b3_384_fold1.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.24891436100006104
+    },
+    {
+      "model": "efficientnet_b3",
+      "fold": 2,
+      "checkpoint": "checkpoints/best_efficientnet_b3_384_fold2.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.6423641443252563
+    },
+    {
+      "model": "efficientnet_b3",
+      "fold": 3,
+      "checkpoint": "checkpoints/best_efficientnet_b3_384_fold3.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.20462365448474884
+    },
+    {
+      "model": "efficientnet_b3",
+      "fold": 4,
+      "checkpoint": "checkpoints/best_efficientnet_b3_384_fold4.pt",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "probability_pneumonia": 0.04492112994194031
+    }
+  ]
+}
