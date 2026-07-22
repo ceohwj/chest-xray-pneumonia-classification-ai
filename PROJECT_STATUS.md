@@ -63,6 +63,8 @@ Completed in the current cleanup:
   redistribution review.
 - These notebook and PDF files are the artifacts used for the actual final
   submission, not reconstructed portfolio-only versions.
+- Core baseline, transfer-learning, and 384px ensemble evidence is curated under
+  `reports/artifacts/`; exact split assignments are tracked under `data/splits/`.
 
 Still required:
 

@@ -25,6 +25,8 @@ research/education results, not clinical validation.
 
 - `figures/`: derived plots used by the reports.
 - `tables/`: metadata and duplicate-audit CSVs.
+- [`artifacts/`](artifacts/README.md): tracked configs, metrics, OOF evidence,
+  and FN/FP tables selected from ignored experiment outputs.
 - `submission/chest_xray_classification_report_2026-07-01.pdf`: authoritative
   25-page final submission report. It is excluded from Git because it embeds source X-rays;
   publish it only after confirming the dataset redistribution terms.

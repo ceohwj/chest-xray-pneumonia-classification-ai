@@ -13,9 +13,9 @@ data/
     test/
   test.csv
   sample_submission.csv
-outputs/
-  train_split.csv
-  val_split.csv
+  splits/
+    train_strict_duplicate_aware.csv
+    val_strict_duplicate_aware.csv
 ```
 
 The existing local archive is:

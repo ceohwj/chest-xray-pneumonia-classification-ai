@@ -39,7 +39,7 @@ for threshold analysis, confusion matrices, error analysis, and limitations.
 
 ```text
 .
-├── data/                 # CSV metadata only; X-ray images are excluded
+├── data/                 # CSV metadata and reproducible splits; images excluded
 ├── docs/                 # Experiment and daily logs
 ├── kaggle/               # Kaggle-oriented training entry points
 ├── notebooks/            # Integrated notebook deliverables
@@ -55,6 +55,11 @@ for threshold analysis, confusion matrices, error analysis, and limitations.
 
 Generated checkpoints, predictions, submissions, and Grad-CAM images are kept
 under `outputs/` locally and are intentionally excluded from Git.
+
+Small configs, metrics, OOF evidence, and FN/FP tables selected from those runs
+are versioned under [`reports/artifacts/`](reports/artifacts/README.md). Exact
+train/validation assignments are versioned under
+[`data/splits/`](data/splits/README.md).
 
 ## Final submission artifacts
 
@@ -164,6 +169,8 @@ operating threshold.
 - [Experiment log](docs/EXPERIMENT_LOG.md)
 - [Historical code references](docs/HISTORICAL_CODE_REFERENCES.md)
 - [Report index](reports/README.md)
+- [Curated experiment artifacts](reports/artifacts/README.md)
+- [Reproducible data splits](data/splits/README.md)
 - [Final ensemble and pseudo-labeling report](reports/final_ensemble_pseudo_labeling_report.md)
 
 ## License

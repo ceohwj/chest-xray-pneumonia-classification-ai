@@ -34,8 +34,8 @@ LABEL_NAMES = {0: "NORMAL", 1: "PNEUMONIA"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run one-epoch Custom CNN training smoke test.")
-    parser.add_argument("--train_csv", default="outputs/train_split.csv")
-    parser.add_argument("--val_csv", default="outputs/val_split.csv")
+    parser.add_argument("--train_csv", default="data/splits/train_duplicate_aware.csv")
+    parser.add_argument("--val_csv", default="data/splits/val_duplicate_aware.csv")
     parser.add_argument("--image_dir", default="data/images")
     parser.add_argument("--batch_size", type=int, default=16)
     parser.add_argument("--image_size", type=int, default=224)

@@ -35,8 +35,8 @@ IMAGENET_STD = [0.229, 0.224, 0.225]
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train a local transfer-learning ensemble.")
-    parser.add_argument("--train-csv", default="outputs/train_split.csv")
-    parser.add_argument("--val-csv", default="outputs/val_split.csv")
+    parser.add_argument("--train-csv", default="data/splits/train_strict_duplicate_aware.csv")
+    parser.add_argument("--val-csv", default="data/splits/val_strict_duplicate_aware.csv")
     parser.add_argument("--test-csv", default="data/test.csv")
     parser.add_argument("--sample-submission", default="data/sample_submission.csv")
     parser.add_argument("--image-dir", default="data/images")
