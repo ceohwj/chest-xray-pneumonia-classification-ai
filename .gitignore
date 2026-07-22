@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local Python environments
+.venv/
+venv/
+
+# Editors and notebooks
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# macOS metadata
+.DS_Store
+
+# Local plotting/cache files
+.matplotlib-cache/
+
+# Large local data and generated artifacts
+data/images/
+data/images.zip
+outputs/
+kaggle_upload/
+
+# Model and archive artifacts
+*.pt
+*.pth
+*.ckpt
+*.tar
+*.zip
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# X-ray sample sheets derived from the local dataset. Keep these private until
+# the dataset redistribution terms are documented.
+reports/sample_images_grid.png
+reports/figures/random_samples_by_label.png
+reports/figures/duplicate_group_audit/*_grid.png
+
+# Final submission PDF embeds source X-rays and Grad-CAM contact sheets.
+# Publish only after confirming the dataset redistribution terms.
+reports/submission/chest_xray_classification_report_2026-07-01.pdf
