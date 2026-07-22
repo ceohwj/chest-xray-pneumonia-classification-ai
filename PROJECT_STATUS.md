@@ -65,10 +65,13 @@ Completed in the current cleanup:
   submission, not reconstructed portfolio-only versions.
 - Core baseline, transfer-learning, and 384px ensemble evidence is curated under
   `reports/artifacts/`; exact split assignments are tracked under `data/splits/`.
+- `DATASET.md` records OZ Coding School as the confirmed delivery channel and
+  separates that fact from the unconfirmed upstream publisher and license.
 
 Still required:
 
-- Add the exact dataset source, version, citation, and license terms.
+- Obtain written upstream provenance, version, and redistribution terms from OZ
+  Coding School or the underlying rights holder.
 - Choose and add a code license.
 - Decide whether selected model weights should be published separately as a
   GitHub Release or other artifact, with provenance and checksums.

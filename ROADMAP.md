@@ -24,7 +24,10 @@ and reproducibility work. The project remains research/education-only.
 - [x] Add dependency, script, and report indexes.
 - [x] Group runnable code by responsibility and apply action-first file names.
 - [x] Promote small reproducibility artifacts from ignored experiment outputs.
-- [ ] Add exact dataset URL, citation, version, and redistribution terms.
+- [x] Document OZ Coding School as the known dataset delivery channel and keep
+  source X-rays excluded while redistribution rights remain unconfirmed.
+- [ ] Obtain the upstream dataset URL, citation, immutable version, and written
+  redistribution terms from the course provider or rights holder.
 - [ ] Choose and add a repository license.
 - [ ] Confirm that every committed figure is permitted for redistribution.
 - [ ] Decide whether to publish model weights as a separate release artifact.

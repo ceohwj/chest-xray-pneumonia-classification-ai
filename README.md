@@ -49,6 +49,7 @@ for threshold analysis, confusion matrices, error analysis, and limitations.
 │   ├── data/             # Audit, Dataset, transforms, and split utilities
 │   ├── models/           # Custom CNN and transfer-model factories
 │   └── metrics.py        # Binary metrics and FN/FP export helpers
+├── DATASET.md            # Provenance, licensing limits, and data-use policy
 ├── PROJECT_STATUS.md
 └── ROADMAP.md
 ```
@@ -103,9 +104,12 @@ data/
 ```
 
 Image files are not distributed in this repository. Before reproducing the
-experiments, obtain the dataset from its authorized source and confirm its
-license and redistribution terms. The exact public dataset citation still needs
-to be added before the repository is presented as fully reproducible.
+experiments, obtain the dataset through an authorized channel and follow its
+applicable terms. This project received the data from OZ Coding School as course
+material. The original upstream publisher, immutable version, and image
+redistribution license were not supplied, so the repository does not infer a
+public dataset identity from matching class names or image counts. See
+[`DATASET.md`](DATASET.md) for the known provenance and repository policy.
 
 ## Basic verification
 
@@ -155,8 +159,8 @@ operating threshold.
 
 - Patient identifiers are unavailable, so patient-level leakage cannot be fully
   ruled out even after duplicate-aware splitting.
-- The dataset source, version, and redistribution license need an explicit
-  citation in this repository.
+- The dataset was supplied through OZ Coding School, but its original upstream
+  publisher, version, and redistribution license remain unconfirmed.
 - Some scripts contain Kaggle/Colab-specific path defaults.
 - Model weights and generated artifacts are not versioned in Git.
 - Grad-CAM can reveal model sensitivity but cannot validate lesion localization.
@@ -166,6 +170,7 @@ operating threshold.
 
 - [Project status](PROJECT_STATUS.md)
 - [Roadmap](ROADMAP.md)
+- [Dataset provenance and use](DATASET.md)
 - [Experiment log](docs/EXPERIMENT_LOG.md)
 - [Historical code references](docs/HISTORICAL_CODE_REFERENCES.md)
 - [Report index](reports/README.md)
