@@ -2,11 +2,14 @@
 
 **한국어** | [English](README.en.md)
 
-중복 이미지로 인한 데이터 누수 가능성을 점검하고, Custom CNN부터
-전이학습·384px 앙상블까지 단계적으로 비교한 PyTorch 의료 AI
-포트폴리오 프로젝트입니다. Accuracy만 높이는 대신 PNEUMONIA
-민감도(Sensitivity), FN/FP, 임계값(Threshold) 변화와 Grad-CAM 오류 분석을
-함께 다뤘습니다.
+> **개인 프로젝트 · Medical AI Portfolio**
+
+오즈코딩스쿨에서 제공받은 교육용 흉부 X-ray 데이터로 진행한 개인 의료 AI
+프로젝트입니다. 데이터 감사와 중복 그룹 분할부터 Custom CNN 기준 모델,
+전이학습, 384px 5-fold 앙상블, FN/FP 및 Grad-CAM 오류 분석까지 직접
+구성했습니다. Accuracy만 높이는 대신 PNEUMONIA 민감도(Sensitivity),
+특이도(Specificity), 임계값(Threshold)에 따른 오류 교환과 데이터 누수 위험을
+함께 검증했습니다.
 
 `Medical AI` · `PyTorch` · `Transfer Learning` · `5-Fold OOF` ·
 `Grad-CAM` · `Error Analysis`
@@ -31,9 +34,9 @@
 
 | 항목 | 내용 |
 | --- | --- |
-| 프로젝트 유형 | 교육 과정 기반 의료 영상 이진 분류 포트폴리오 |
+| 프로젝트 유형 | 개인 프로젝트 · 교육용 의료 영상 이진 분류 포트폴리오 |
 | 문제 | 흉부 X-ray를 `NORMAL`과 `PNEUMONIA`로 분류 |
-| 수행 범위 | 데이터 감사, 중복 그룹 분할, PyTorch 모델링, 학습·평가, OOF 앙상블, threshold 분석, FN/FP·Grad-CAM 검토, 문서화 |
+| 개인 수행 범위 | 데이터 감사, 중복 그룹 분할, PyTorch 모델링, 학습·평가, OOF 앙상블, threshold 분석, FN/FP·Grad-CAM 검토, 문서화 |
 | 데이터 | 오즈코딩스쿨 제공 교육용 데이터: labeled train 5,216장, unlabeled test 624장 |
 | 검증 | strict duplicate-aware holdout 및 5-fold OOF |
 | 기준 결과 | 384px ensemble OOF, threshold 0.40: F1 `0.9946`, Sensitivity `0.9935`, Specificity `0.9873` |
@@ -90,9 +93,10 @@ perceptual group을 재검토하는 strict split을 만들었습니다.
 
 ## 3. 개인 수행 범위와 핵심 의사결정
 
-데이터 구조와 중복 위험 감사, split 설계, Custom CNN 및 전이학습 모델 구현,
-학습·평가 루프, checkpoint와 지표 저장, OOF 앙상블, threshold 분석,
-FN/FP 추출, Grad-CAM 검토와 결과 문서화를 수행했습니다.
+개인 프로젝트로 진행하며 데이터 구조와 중복 위험 감사, split 설계,
+Custom CNN 및 전이학습 모델 구현, 학습·평가 루프, checkpoint와 지표 저장,
+OOF 앙상블, threshold 분석, FN/FP 추출, Grad-CAM 검토와 결과 문서화를
+수행했습니다.
 
 ### 3.1 기준 모델부터 시작
 
